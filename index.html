@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cartedge Academy — Build Your Website in 1 Day</title>
+<meta name="description" content="Build a professional website without coding using AI tools. Live workshop on Google Meet — just ₹199.">
+<meta property="og:title" content="Cartedge Academy — Live Website Workshop">
+<meta property="og:description" content="Build a website without coding. Live workshop — ₹199.">
+<meta property="og:image" content="https://learn.cartedge.in/wp-content/uploads/2026/04/Thumbnail-scaled.png">
+<meta name="theme-color" content="#3e57da">
+<link rel="icon" href="https://learn.cartedge.in/wp-content/uploads/2026/04/cropped-Website-Logo-1-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0f2c; --ink-2:#1f235b; --text:#333b52; --muted:#656c86; --mist:#969bb5;
+  --hairline:#d1d6e5; --cloud:#e6eaf4; --paper:#f5f8ff; --white:#fff;
+  --indigo:#3e57da; --glow:#8098f9; --lavender:#c6d7fe;
+  --grad-deep:linear-gradient(90deg,#8098f9,#3e57da 50%,#2c43b8);
+  --grad-light:linear-gradient(90deg,#e3ebff,#c6d7fe 50%,#8098f9);
+  --mint:#ebf6df; --forest:#1a280b; --butter:#fffadb; --saffron:#42230a; --coral:#ff7345;
+  --sh-card:0 2px 16px rgba(16,24,40,.08);
+  --sh-btn:0 2px 10px rgba(16,24,40,.08);
+  --sh-lg:0 6px 20px rgba(16,24,40,.08);
+  --font:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --max:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--text);font:400 16px/1.6 var(--font);letter-spacing:-.004em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);font-weight:500;margin:0;text-wrap:balance}
+.lead{text-wrap:pretty}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:112px 0}
+.tint{background:var(--paper)}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:8px}
+
+/* type — signature tight display tracking */
+.display{font-size:clamp(44px,7vw,88px);line-height:1.02;letter-spacing:-.05em}
+.h2{font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-.04em}
+.lead{font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:var(--muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:500 12px/1.6 var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--indigo)}
+.grad-text{background:var(--grad-deep);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head{max-width:720px;margin:0 auto 64px;text-align:center}
+.sec-head .lead{margin-top:20px}
+.sec-head .eyebrow{margin-bottom:16px}
+
+/* buttons — 12px radius, never pills */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;font:500 16px/1.2 var(--font);border:0;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .3s ease;white-space:nowrap}
+.btn-primary{background:var(--indigo);color:#fff;box-shadow:var(--sh-btn)}
+.btn-primary:hover{background:var(--grad-deep);box-shadow:var(--sh-lg);transform:translateY(-1px)}
+.btn-secondary{background:#fff;color:var(--ink);box-shadow:0 0 0 1px var(--hairline),var(--sh-card)}
+.btn-secondary:hover{box-shadow:0 0 0 1px var(--glow),var(--sh-lg)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn svg{width:16px;height:16px;transition:transform .2s ease}
+.btn:hover svg{transform:translateX(3px)}
+.btn-lg{padding:18px 28px;font-size:17px}
+
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font:500 13px/1.4 var(--font);background:var(--paper);color:var(--ink)}
+
+/* ticker */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;font-size:14px;padding:10px 0}
+.ticker-track{display:flex;width:max-content;animation:tick 38s linear infinite}
+.ticker span{padding:0 22px;white-space:nowrap}
+.ticker span::after{content:"✦";color:var(--glow);margin-left:44px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--cloud)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font:600 20px/1 var(--font);color:var(--ink);letter-spacing:-.03em}
+.logo small{font-weight:400;color:var(--muted);font-size:14px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:32px;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav .btn{padding:11px 18px;font-size:15px}
+
+/* hero */
+.hero{padding:88px 0 0;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;inset:-120px 0 auto;height:620px;background:radial-gradient(60% 55% at 50% 0%,rgba(198,215,254,.55),transparent 70%);pointer-events:none;z-index:-1}
+.hero .badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--cloud),var(--sh-btn);font-size:14px;color:var(--muted);margin-bottom:32px;white-space:nowrap}
+.hero .badge b{background:var(--mint);color:var(--forest);font:500 12px/1.6 var(--font);letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:#2f9e44}
+.hero .display{max-width:980px;margin:0 auto}
+.hero .lead{max-width:640px;margin:28px auto 0}
+.hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.hero-note{margin-top:16px;font-size:14px;color:var(--muted)}
+
+.meta{display:grid;grid-template-columns:repeat(4,1fr);max-width:860px;margin:56px auto 0;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--cloud),var(--sh-card);overflow:hidden}
+.meta div{padding:20px 16px;text-align:left;border-left:1px solid var(--cloud)}
+.meta div:first-child{border-left:0}
+.meta small{display:block;font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.meta strong{display:block;margin-top:4px;color:var(--ink);font-weight:500;font-size:16px}
+
+/* dark studio panel */
+.studio{margin:72px auto 0;max-width:1100px;background:var(--ink);border-radius:24px;padding:14px;display:grid;grid-template-columns:280px 1fr;gap:14px;text-align:left}
+.studio-side{border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;color:#fff;display:flex;flex-direction:column;gap:6px}
+.studio-side .side-title{margin:0 0 10px;font:500 12px/1.6 var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--glow)}
+.step{display:flex;align-items:center;gap:12px;padding:8px 12px;border-radius:10px;font-size:14px;color:rgba(255,255,255,.72);transition:background .3s,color .3s}
+.step i{width:22px;height:22px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-style:normal;font-size:11px}
+.step.on{background:rgba(128,152,249,.14);color:#fff}
+.step.on i{background:var(--glow);border-color:var(--glow);color:var(--ink)}
+.studio-side .cd-mini{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+.studio-side .cd-mini small{font-size:12px;color:rgba(255,255,255,.6)}
+.studio-stage{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;align-self:center;background:#181b45}
+.studio-stage img{width:100%;height:100%;object-fit:cover}
+.stage-tag{position:absolute;top:16px;right:16px;font:500 12px/1 var(--font);letter-spacing:.04em;text-transform:uppercase;color:#fff;background:rgba(13,15,44,.7);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1)}
+.stage-tag .dot{background:#ff5a5a}
+.stage-bar{position:absolute;left:16px;right:16px;bottom:16px;display:flex;align-items:center;gap:12px;color:#fff;font-size:14px;background:rgba(13,15,44,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px}
+.stage-bar .track{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.stage-bar .track span{display:block;height:100%;width:38%;background:var(--glow);border-radius:4px;animation:prog 9s ease-in-out infinite alternate}
+@keyframes prog{to{width:86%}}
+
+/* countdown */
+.cd{display:flex;gap:8px}
+.cd div{text-align:center;min-width:52px}
+.cd b{display:block;font:500 28px/1.1 var(--font);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#fff}
+.cd small{font-size:11px;color:rgba(255,255,255,.6)}
+
+/* stats strip */
+.strip{padding:72px 0}
+.strip p{text-align:center;font-size:14px;color:var(--muted);margin-bottom:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{text-align:center;padding:8px}
+.stat b{display:block;font:500 40px/1.1 var(--font);letter-spacing:-.035em;color:var(--ink)}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* features */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border-radius:16px;box-shadow:0 0 0 1px var(--cloud),var(--sh-card);padding:28px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--lavender),var(--sh-lg)}
+.ico{width:48px;height:48px;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--indigo);margin-bottom:20px}
+.ico svg{width:24px;height:24px}
+.card h3{font-size:20px;line-height:1.4;letter-spacing:-.008em}
+.card p{margin-top:8px;font-size:15px;color:var(--text)}
+.card .num{float:right;font:500 12px/1.6 var(--font);letter-spacing:.04em;color:var(--muted)}
+
+/* audience */
+.aud{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.aud .card{padding:24px;text-align:left}
+.aud .card h3{font-size:18px}
+.aud .card p{font-size:14px;color:var(--muted);margin-top:4px}
+.aud-foot{margin-top:40px;text-align:center}
+.aud-foot .pill{background:var(--butter);color:var(--saffron)}
+
+/* dark agenda block */
+.dark{background:var(--ink);color:#fff;border-radius:24px;padding:72px;display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;position:relative;overflow:hidden}
+.dark::after{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-200px;background:radial-gradient(circle,rgba(128,152,249,.28),transparent 65%);pointer-events:none}
+.dark h2,.dark h3{color:#fff}
+.dark .eyebrow{color:var(--glow)}
+.dark .lead{color:rgba(255,255,255,.72);margin-top:20px}
+.dark .cd{margin:36px 0}
+.dark .cd div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 8px;min-width:76px}
+.dark .cd b{font-size:36px}
+.price{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.price b{font:500 48px/1 var(--font);letter-spacing:-.04em}
+.price span{color:rgba(255,255,255,.6);font-size:15px}
+.timeline{list-style:none;margin:0;padding:0;position:relative;z-index:1}
+.timeline li{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.1)}
+.timeline li:first-child{border-top:0}
+.timeline time{font:500 13px/1.6 var(--font);color:var(--glow);letter-spacing:.02em}
+.timeline h3{font-size:17px}
+.timeline p{font-size:14px;color:rgba(255,255,255,.66);margin-top:2px}
+.secure{margin-top:14px;font-size:13px;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:8px}
+
+/* instructor */
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.portrait{position:relative;border-radius:24px;overflow:hidden;background:var(--grad-light);aspect-ratio:4/5}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:top}
+.portrait .pill{position:absolute;left:20px;bottom:20px;background:#fff;box-shadow:var(--sh-lg)}
+.quotes{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px}
+.quotes li{display:flex;gap:14px;font-size:16px;color:var(--text)}
+.quotes li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233e57da' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/12px no-repeat}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.role{margin-top:12px;color:var(--muted);font-size:16px}
+.tint .pill{background:#fff;box-shadow:0 0 0 1px var(--cloud)}
+.tint .quotes li::before{background-color:#fff;box-shadow:0 0 0 1px var(--cloud)}
+
+/* ebook */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;background:#fff;border-radius:24px;box-shadow:0 0 0 1px var(--cloud),var(--sh-card);padding:56px;position:relative;overflow:hidden}
+.book-art{background:var(--paper);border-radius:16px;padding:32px;position:relative}
+.book-art img{margin:0 auto;max-height:380px;filter:drop-shadow(0 18px 30px rgba(13,15,44,.18))}
+.book-art .off{position:absolute;top:16px;left:16px;background:var(--butter);color:var(--saffron);font:500 12px/1.6 var(--font);letter-spacing:.04em;padding:4px 12px;border-radius:999px}
+.book .price{color:var(--ink);margin:28px 0}
+.book .price s{color:var(--muted);font-size:20px}
+.book p+p{margin-top:14px}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.review{background:#fff;border-radius:16px;box-shadow:0 0 0 1px var(--cloud),var(--sh-card);overflow:hidden;display:flex;flex-direction:column}
+.yt{position:relative;aspect-ratio:9/16;background:var(--ink);border:0;padding:0;cursor:pointer;width:100%;display:block}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .3s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.yt:hover img{opacity:1;transform:scale(1.03)}
+.yt .play{position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:var(--sh-lg);transition:transform .2s}
+.yt:hover .play{transform:scale(1.08)}
+.yt .play svg{width:22px;height:22px;margin-left:3px;color:var(--indigo)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.review-body{padding:20px}
+.review-body h3{font-size:17px;line-height:1.4}
+.review-body span{display:block;margin-top:6px;font-size:14px;color:var(--muted)}
+.yt-cta{margin-top:48px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--cloud),var(--sh-card)}
+.yt-cta h3{font-size:20px}
+.yt-cta p{color:var(--muted);font-size:15px;margin-top:4px}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--cloud)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font:500 18px/1.45 var(--font);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:32px;height:32px;border-radius:50%;background:var(--paper);position:relative;transition:transform .3s,background .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;inset:0;margin:auto;width:12px;height:1.5px;background:var(--indigo);border-radius:2px}
+.faq summary i::after{transform:rotate(90deg);transition:transform .3s}
+.faq details[open] summary i{background:var(--lavender)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq details p{padding:0 56px 26px 0;color:var(--text);font-size:16px}
+
+/* final cta */
+.final{text-align:center;padding:120px 0}
+.final .h2{max-width:760px;margin:0 auto}
+.final .lead{max-width:560px;margin:20px auto 40px}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 32px;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot .logo{color:#fff}
+.foot .logo small{color:rgba(255,255,255,.6)}
+.foot p{max-width:340px;margin-top:16px}
+.foot nav{display:flex;gap:28px;flex-wrap:wrap}
+.foot nav a:hover{color:#fff}
+.copy{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:rgba(255,255,255,.5)}
+
+/* floating widget */
+.float{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;padding:6px 18px 6px 6px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--cloud),var(--sh-lg);font:500 14px/1 var(--font);color:var(--ink);transform:translateY(120%);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.float.show{transform:none;opacity:1}
+.float img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top;background:var(--paper)}
+.float em{font-style:normal;color:var(--indigo)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1024px){
+  .aud{grid-template-columns:repeat(3,1fr)}
+  .reviews{grid-template-columns:repeat(2,1fr)}
+  .dark{grid-template-columns:1fr;padding:56px 40px;gap:48px}
+  .studio{grid-template-columns:1fr}
+  .studio-side{display:none}
+}
+@media (max-width:820px){
+  section{padding:80px 0}
+  .nav-links{display:none}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .split,.book{grid-template-columns:1fr;gap:40px}
+  .book{padding:32px}
+  .portrait{max-width:440px;aspect-ratio:1/1}
+  .stats{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .meta{grid-template-columns:repeat(2,1fr)}
+  .meta div:nth-child(3){border-left:0}
+  .meta div:nth-child(n+3){border-top:1px solid var(--cloud)}
+  .yt-cta{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero{padding-top:56px}
+  .grid-3{grid-template-columns:1fr}
+  .aud{grid-template-columns:1fr 1fr;gap:12px}
+  .aud .card{padding:18px}
+  .reviews{grid-template-columns:1fr 1fr;gap:12px}
+  .review-body{padding:14px}
+  .review-body h3{font-size:15px}
+  .hero-ctas .btn{width:100%}
+  .nav .btn{padding:10px 14px;font-size:14px}
+  .logo small{display:none}
+  .dark{padding:40px 20px;border-radius:20px}
+  .dark .cd div{min-width:0;flex:1}
+  .dark .cd b{font-size:28px}
+  .studio{padding:8px;border-radius:18px;margin-top:48px}
+  .stage-bar{display:none}
+  .faq details p{padding-right:0}
+  .float{right:12px;bottom:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>🚀 Build websites without coding</span><span>Hands-on AI tools training</span><span>Limited seats available</span><span>Professional certificate</span><span>Step-by-step guidance</span><span>Live workshop</span>
+    <span>🚀 Build websites without coding</span><span>Hands-on AI tools training</span><span>Limited seats available</span><span>Professional certificate</span><span>Step-by-step guidance</span><span>Live workshop</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Cartedge Academy">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3e57da"/><path d="M21.5 11.2A7 7 0 1 0 21.5 20.8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="22.5" cy="16" r="2" fill="#c6d7fe"/></svg>
+      cartedge <small>academy</small>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#learn">Curriculum</a>
+      <a href="#who">Who it's for</a>
+      <a href="#mentor">Instructor</a>
+      <a href="#stories">Stories</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://payments.cashfree.com/forms?code=Cartedge" target="_blank" rel="noopener">Join for ₹199</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="badge rv"><b><span class="dot"></span>Live</b> Website Workshop · 7 Oct</span>
+    <h1 class="display rv">Build your own <span class="grad-text">website</span> in just one day</h1>
+    <p class="lead rv">And start earning online. Learn to build a professional website with AI tools, WordPress and Elementor — without writing a single line of code.</p>
+    <div class="hero-ctas rv">
+      <a class="btn btn-primary btn-lg" href="https://payments.cashfree.com/forms?code=Cartedge" target="_blank" rel="noopener">Join now for ₹199
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-secondary btn-lg" href="#learn">See the curriculum</a>
+    </div>
+    <p class="hero-note rv">🔒 Secure payment · Instant access</p>
+
+    <div class="meta rv">
+      <div><small>Date</small><strong>Wed, 7 Oct 2026</strong></div>
+      <div><small>Time</small><strong>08:15 PM IST</strong></div>
+      <div><small>Language</small><strong>Marathi</strong></div>
+      <div><small>Platform</small><strong>Google Meet</strong></div>
+    </div>
+
+    <div class="studio rv">
+      <aside class="studio-side" aria-hidden="true">
+        <p class="side-title">Workshop flow</p>
+        <div class="step on"><i>✓</i>AI website design</div>
+        <div class="step on"><i>✓</i>Domain &amp; Hosting</div>
+        <div class="step on"><i>3</i>WordPress + Elementor</div>
+        <div class="step"><i>4</i>WhatsApp Integration</div>
+        <div class="step"><i>5</i>Client Strategy</div>
+        <div class="step"><i>6</i>Certificate</div>
+        <div class="cd-mini">
+          <small>Going live in</small>
+          <div class="cd" data-countdown style="margin-top:10px"></div>
+        </div>
+      </aside>
+      <div class="studio-stage">
+        <img src="https://learn.cartedge.in/wp-content/uploads/2026/04/Thumbnail-scaled.png" alt="Cartedge Academy live website workshop preview" width="1600" height="900" fetchpriority="high">
+        <span class="stage-tag"><span class="dot"></span>Cartedge Live</span>
+        <div class="stage-bar" aria-hidden="true">
+          <span>Step-by-Step Practical Training</span>
+          <div class="track"><span></span></div>
+          <span>Google Meet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="strip">
+  <div class="wrap">
+    <p class="rv">Trusted by students, homemakers and business owners across Maharashtra</p>
+    <div class="stats rv">
+      <div class="stat"><b>1,500+</b><span>Digital entrepreneurs in our community</span></div>
+      <div class="stat"><b>0</b><span>Lines of code you'll write</span></div>
+      <div class="stat"><b>6</b><span>Hands-on modules</span></div>
+      <div class="stat"><b>₹199</b><span>Full workshop fee</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CURRICULUM -->
+<section class="tint" id="learn">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">What you'll learn</span>
+      <h2 class="h2 rv">Why take this workshop?</h2>
+      <p class="lead rv">The digital industry is growing fast and the AI era is here. Every business now needs a website — and building one no longer requires coding.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card rv"><span class="num">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Design with AI tools</h3><p>Use advanced AI tools to create a professional website design in minutes.</p></article>
+      <article class="card rv"><span class="num">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Domain &amp; Hosting Setup</h3><p>Everything technical you need to take your site live — explained in plain language.</p></article>
+      <article class="card rv"><span class="num">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></div><h3>WordPress + Elementor</h3><p>Build on the world's most popular platform with drag-and-drop — no code.</p></article>
+      <article class="card rv"><span class="num">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/><path d="M9 10c0 3 2 5 5 5"/></svg></div><h3>WhatsApp Integration</h3><p>Set up an automatic WhatsApp chat so customers can reach you instantly.</p></article>
+      <article class="card rv"><span class="num">05</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Client-winning strategy</h3><p>How to actually earn after building — and how to land your first paying clients.</p></article>
+      <article class="card rv"><span class="num">06</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div><h3>Professional Certificate</h3><p>An official certificate recognising your new skills when you complete the workshop.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">No technical knowledge required</span>
+      <h2 class="h2 rv">Who is this for?</h2>
+      <p class="lead rv">Learning web development doesn't just give you a website — it opens up multiple new income streams.</p>
+    </div>
+    <div class="aud">
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div><h3>Students</h3><p>10th / 12th / College</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div><h3>Job Seekers</h3><p>Upgrade your portfolio</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M10 20v-5h4v5"/></svg></div><h3>Business Owners</h3><p>Take business online</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg></div><h3>Homemakers</h3><p>Work from home easily</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Freelancers</h3><p>Start your agency</p></article>
+    </div>
+    <div class="aud-foot rv"><span class="pill">💡 The right skill can become a real monthly income — we'll show you how</span></div>
+  </div>
+</section>
+
+<!-- AGENDA / DARK -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="dark rv">
+      <div style="position:relative;z-index:1">
+        <span class="eyebrow">Live on Google Meet</span>
+        <h2 class="h2" style="margin-top:16px">Seats are limited. Lock in yours today.</h2>
+        <p class="lead">Build alongside the instructor in real time and ask your questions live.</p>
+        <div class="cd" data-countdown></div>
+        <div class="price"><b>₹199</b><span>One-time · Full workshop + certificate</span></div>
+        <a class="btn btn-primary btn-lg" href="https://payments.cashfree.com/forms?code=Cartedge" target="_blank" rel="noopener">Reserve my seat
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="secure"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Secure payment via Cashfree</p>
+      </div>
+      <ol class="timeline">
+        <li><time>Step 01</time><div><h3>Design with AI</h3><p>Layout and content for your business in minutes.</p></div></li>
+        <li><time>Step 02</time><div><h3>Domain &amp; Hosting</h3><p>Your own .com / .in name on a live server.</p></div></li>
+        <li><time>Step 03</time><div><h3>WordPress + Elementor</h3><p>Assemble the full site with drag-and-drop.</p></div></li>
+        <li><time>Step 04</time><div><h3>WhatsApp Chat</h3><p>Customers talk to you directly.</p></div></li>
+        <li><time>Step 05</time><div><h3>Clients &amp; income</h3><p>A strategy to start freelancing.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="tint" id="mentor">
+  <div class="wrap split">
+    <div class="portrait rv">
+      <img src="https://learn.cartedge.in/wp-content/uploads/2026/03/VSS-scaled.png" alt="Mr. Vinod Shelar, instructor" loading="lazy">
+      <span class="pill">✦ Instructor · Cartedge</span>
+    </div>
+    <div>
+      <span class="eyebrow rv">Meet your instructor</span>
+      <h2 class="h2 rv" style="margin-top:16px">Vinod Shelar</h2>
+      <p class="role rv">Ecommerce Growth Expert · Performance Marketer · Conversion-Focused Developer</p>
+      <ul class="quotes rv">
+        <li>I help brands scale profitably with high-converting websites and performance marketing strategies.</li>
+        <li>Not just a developer — I combine tech + marketing to deliver real business results.</li>
+        <li>My focus is simple: More Leads. More Sales. More Growth.</li>
+        <li>I build systems that work 24/7 to grow your business.</li>
+      </ul>
+      <div class="tags rv"><span class="pill">#GrowthHacker</span><span class="pill">#AIPioneer</span><span class="pill">#ConversionExpert</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EBOOK -->
+<section>
+  <div class="wrap">
+    <div class="book rv">
+      <div class="book-art">
+        <span class="off">60% OFF</span>
+        <img src="https://learn.cartedge.in/wp-content/uploads/2026/04/Vinod-Book.png" alt="Step-by-Step Website Development eBook by Vinod Shelar" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">From the author · eBook</span>
+        <h2 class="h2" style="margin-top:16px">Step-by-Step Website Development</h2>
+        <p class="lead" style="margin-top:20px">Vinod Shelar's beginner-friendly eBook for people with no coding background — now available as a PDF.</p>
+        <p style="margin-top:14px">Its goal is simple: remove the tech barriers so anyone can build their own digital identity. Read it on your phone or laptop, anytime.</p>
+        <div class="price"><b>₹199</b><s>₹499</s></div>
+        <a class="btn btn-secondary" href="#" data-todo="ebook-payment-link">Get the PDF
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M3 14h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="tint" id="stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Success stories</span>
+      <h2 class="h2 rv">Hear it from our students</h2>
+      <p class="lead rv">Real students on how they built websites without coding and grew their businesses with Cartedge.</p>
+    </div>
+    <div class="reviews">
+      <article class="review rv"><button class="yt" data-id="hUKG_NIBxC8" aria-label="Play Srushti Chavan's video review"><img src="https://i.ytimg.com/vi/hUKG_NIBxC8/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="review-body"><h3>“I built an e‑commerce website!”</h3><span>Srushti Chavan · Student</span></div></article>
+      <article class="review rv"><button class="yt" data-id="gQxe4zGAkzw" aria-label="Play Varsha Thorat's video review"><img src="https://i.ytimg.com/vi/gQxe4zGAkzw/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="review-body"><h3>“I started freelancing!”</h3><span>Varsha Thorat, Pune · Homemaker</span></div></article>
+      <article class="review rv"><button class="yt" data-id="nNPjtFHP7jo" aria-label="Play Sonali Wable's video review"><img src="https://i.ytimg.com/vi/nNPjtFHP7jo/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="review-body"><h3>“Covered it all in one day!”</h3><span>Sonali Wable · Business owner</span></div></article>
+      <article class="review rv"><button class="yt" data-id="NnZ4TQf20FI" aria-label="Play Sachin More's video review"><img src="https://i.ytimg.com/vi/NnZ4TQf20FI/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="review-body"><h3>“I launched my business!”</h3><span>Sachin More · Entrepreneur</span></div></article>
+    </div>
+    <div class="yt-cta rv">
+      <div><h3>YouTube community</h3><p>Join 1,500+ digital entrepreneurs. Subscribe for free tips and website strategies.</p></div>
+      <a class="btn btn-secondary" href="https://www.youtube.com/channel/UCtP9bPCFNJxHeg_JlydmtlQ?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="#ff3d3d"/><path d="M10 9v6l5-3z" fill="#fff"/></svg>Subscribe</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Clear your doubts</span>
+      <h2 class="h2 rv">Frequently asked questions</h2>
+    </div>
+    <div class="faq rv">
+      <details open><summary>I can't code. Can I still take this workshop?<i></i></summary><p>Absolutely. It's designed for non-technical people. We use AI tools and Elementor, so you'll build a professional website without writing a single line of code.</p></details>
+      <details><summary>Will I get a certificate?<i></i></summary><p>Yes. On completion you'll receive an official Website Development &amp; Design certificate you can add to your résumé or portfolio.</p></details>
+      <details><summary>Can I build the website on my phone?<i></i></summary><p>A phone works for watching and learning the concepts. For the hands-on build, a laptop or computer is recommended.</p></details>
+      <details><summary>Is the workshop live or recorded?<i></i></summary><p>It's live, on Google Meet — so you can ask the instructor questions in real time.</p></details>
+      <details><summary>Will you teach me how to find clients?<i></i></summary><p>Yes. Beyond building the site, you'll learn how to start freelancing and the marketing strategies to win your first clients.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final tint">
+  <div class="wrap">
+    <span class="eyebrow rv">Your website. Your income.</span>
+    <h2 class="h2 rv" style="margin-top:16px">Don't get left behind. Start building today.</h2>
+    <p class="lead rv">One evening's investment, a lifelong skill. Live workshop + certificate for ₹199.</p>
+    <a class="btn btn-primary btn-lg rv" href="https://payments.cashfree.com/forms?code=Cartedge" target="_blank" rel="noopener">Join now for ₹199
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo">
+          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3e57da"/><path d="M21.5 11.2A7 7 0 1 0 21.5 20.8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="22.5" cy="16" r="2" fill="#c6d7fe"/></svg>
+          cartedge <small>academy</small>
+        </a>
+        <p>Learn to build websites without coding — practical, hands-on, live.</p>
+      </div>
+      <nav aria-label="Legal">
+        <a href="https://learn.cartedge.in/terms-conditions/">Terms &amp; Conditions</a>
+        <a href="https://learn.cartedge.in/refund_returns/">Refunds &amp; Cancellations</a>
+        <a href="https://learn.cartedge.in/contact-us/">Contact Us</a>
+        <a href="https://www.youtube.com/channel/UCtP9bPCFNJxHeg_JlydmtlQ" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+    </div>
+    <div class="copy"><span>© 2026 Cartedge Academy. All rights reserved.</span><span>Powered by Cartedge</span></div>
+  </div>
+</footer>
+
+<a class="float" id="float" href="https://payments.cashfree.com/forms?code=Cartedge" target="_blank" rel="noopener">
+  <img src="https://learn.cartedge.in/wp-content/uploads/2026/03/VSS-scaled.png" alt="" loading="lazy">
+  Reserve seat · <em>₹199</em>
+</a>
+
+<script>
+// Workshop start: Wed 7 Oct 2026, 8:15 PM IST
+const START = new Date('2026-10-07T20:15:00+05:30').getTime();
+const boxes = document.querySelectorAll('[data-countdown]');
+const pad = n => String(n).padStart(2, '0');
+function tick() {
+  const s = Math.max(0, Math.floor((START - Date.now()) / 1000));
+  const parts = [[Math.floor(s / 86400), 'Days'], [Math.floor(s / 3600) % 24, 'Hours'], [Math.floor(s / 60) % 60, 'Mins'], [s % 60, 'Secs']];
+  const html = s ? parts.map(([v, l]) => `<div><b>${pad(v)}</b><small>${l}</small></div>`).join('')
+                 : '<div><b>Live</b><small>Workshop in progress</small></div>';
+  boxes.forEach(b => b.innerHTML = html);
+}
+tick(); setInterval(tick, 1000);
+
+// Sticky nav border + floating CTA after the hero
+const nav = document.getElementById('nav'), float = document.getElementById('float');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 8);
+  float.classList.toggle('show', scrollY > innerHeight * 0.9);
+}, { passive: true });
+
+// Scroll reveal, staggered within each batch
+const io = new IntersectionObserver(entries => {
+  entries.filter(e => e.isIntersecting).forEach((e, i) => {
+    e.target.style.transitionDelay = (i * 60) + 'ms';
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
+}, { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// YouTube facade: load the iframe only on click
+document.querySelectorAll('.yt').forEach(btn => btn.addEventListener('click', () => {
+  btn.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.id}?autoplay=1&rel=0" title="Student review" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}, { once: true }));
+</script>
+</body>
+</html>
