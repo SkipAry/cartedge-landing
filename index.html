@@ -107,8 +107,17 @@ section{padding:112px 0}
 .step.on i{background:var(--glow);border-color:var(--glow);color:var(--ink)}
 .studio-side .cd-mini{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
 .studio-side .cd-mini small{font-size:12px;color:rgba(255,255,255,.6)}
-.studio-stage{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;align-self:center;background:#181b45}
-.studio-stage img{width:100%;height:100%;object-fit:cover}
+.studio-stage{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;align-self:center;container-type:inline-size;
+  background:radial-gradient(55% 75% at 78% 45%,rgba(128,152,249,.45),transparent 70%),
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/40px 40px,
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/40px 40px,#141742}
+/* hero visual composed in HTML so the copy stays English, crisp and editable */
+.stage-copy{position:absolute;left:6cqw;top:50%;transform:translateY(-58%);width:52%;z-index:1}
+.stage-kicker{font:500 1.5cqw/1.4 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--glow)}
+.stage-h{margin-top:1.6cqw;font:600 5.4cqw/1.02 var(--font);letter-spacing:-.045em;color:#fff}
+.stage-h em{font-style:normal;background:var(--grad-light);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage-sub{text-wrap:balance;margin-top:1.8cqw;font-size:1.9cqw;line-height:1.45;color:rgba(255,255,255,.72)}
+.stage-portrait{position:absolute;right:2cqw;bottom:0;height:94%;width:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
 .stage-tag{position:absolute;top:16px;right:16px;font:500 12px/1 var(--font);letter-spacing:.04em;text-transform:uppercase;color:#fff;background:rgba(13,15,44,.7);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1)}
 .stage-tag .dot{background:#ff5a5a}
 .stage-bar{position:absolute;left:16px;right:16px;bottom:16px;display:flex;align-items:center;gap:12px;color:#fff;font-size:14px;background:rgba(13,15,44,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px}
@@ -281,6 +290,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 32px;font
   .dark .cd b{font-size:28px}
   .studio{padding:8px;border-radius:18px;margin-top:48px}
   .stage-bar{display:none}
+  .stage-kicker,.stage-sub{display:none}
+  .stage-h{font-size:7.4cqw}
+  .stage-tag{top:10px;right:10px;padding:6px 10px;font-size:10px}
   .faq details p{padding-right:0}
   .float{right:12px;bottom:12px}
 }
@@ -352,7 +364,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 32px;font
         </div>
       </aside>
       <div class="studio-stage">
-        <img src="https://learn.cartedge.in/wp-content/uploads/2026/04/Thumbnail-scaled.png" alt="Cartedge Academy live website workshop preview" width="1600" height="900" fetchpriority="high">
+        <div class="stage-copy">
+          <p class="stage-kicker">Live workshop · Step by step</p>
+          <p class="stage-h">Build your business website with <em>AI</em></p>
+          <p class="stage-sub">No programming. No coding. Just a professional site you own.</p>
+        </div>
+        <img class="stage-portrait" src="https://learn.cartedge.in/wp-content/uploads/2026/03/VSS-scaled.png" alt="Vinod Shelar, workshop instructor" fetchpriority="high">
         <span class="stage-tag"><span class="dot"></span>Cartedge Live</span>
         <div class="stage-bar" aria-hidden="true">
           <span>Step-by-Step Practical Training</span>
